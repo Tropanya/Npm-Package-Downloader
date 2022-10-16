@@ -12,8 +12,12 @@ file(GLOB CORE_SOURCES
   "${CMAKE_CURRENT_SOURCE_DIR}/Core/*.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/Core/*.cpp"
 )
+file(GLOB APP_SOURCES
+  "${CMAKE_CURRENT_SOURCE_DIR}/Application/*.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Application/*.cpp"
+)
 
-add_executable(${PROJECT_NAME} ${CORE_SOURCES})
+add_executable(${PROJECT_NAME} ${CORE_SOURCES} ${APP_SOURCES})
 
 target_link_libraries(${PROJECT_NAME} PUBLIC Qt5::Core Qt5::Network)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
